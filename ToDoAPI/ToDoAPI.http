@@ -1,0 +1,50 @@
+@ToDoAPI_HostAddress = http://localhost:5049
+
+### Pobranie wszystkich todo
+GET {{ToDoAPI_HostAddress}}/todos/
+Accept: application/json
+
+###
+
+### Pobranie todo po ID
+GET {{ToDoAPI_HostAddress}}/todos/1
+Accept: application/json
+
+###
+
+### Tworzenie nowego todo
+POST {{ToDoAPI_HostAddress}}/todos
+Content-Type: application/json
+
+{
+    "title": "Walk the dog",
+    "description": "Take the dog for a walk in the park",
+    "dateTimeExpiry": "2024-12-25T10:00:00",
+    "percentComplete": 0
+}
+
+###
+
+### Aktualizowanie todo
+PUT {{ToDoAPI_HostAddress}}/todos/1
+Content-Type: application/json
+
+{
+    "title": "Walk the dog",
+    "description": "Take the dog for a walk and buy treats",
+    "dateTimeExpiry": "2024-12-25T10:00:00",
+    "percentComplete": 50
+}
+
+###
+
+### Usuwanie todo
+DELETE {{ToDoAPI_HostAddress}}/todos/1
+
+###
+
+### Oznaczanie todo jako zrobione
+POST {{ToDoAPI_HostAddress}}/todos/1/mark-as-done
+Accept: application/json
+
+###
